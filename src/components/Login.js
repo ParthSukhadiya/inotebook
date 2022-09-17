@@ -15,11 +15,11 @@ function Login(props) {
           body: JSON.stringify({email:credential.email,password:credential.password})
         });
         const json=await response.json();
-        console.log(json)
+        console.log(json.authToken)
         if(json.success)
           {
             //save the auth token redirect
-            localStorage.setItem('token',json.authtoken)
+             localStorage.setItem('token',json.authToken)
             props.showAlert('Successful logged in','success')
             history('/')
           }

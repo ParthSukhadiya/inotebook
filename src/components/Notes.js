@@ -18,7 +18,7 @@ function Notes(props) {
     else { 
       history('/login')
     }
-    })
+    },[])
   const ref=useRef(null)
   const refClose=useRef(null)
   const [note, setNote] = useState({id:"",etitle:"",edescription:"",etag:""})
@@ -116,7 +116,7 @@ function Notes(props) {
     }</div>
     {
       notes.map((note)=>{
-        return <NoteItem key={note._id} updateNote={updateNote} note={note}></NoteItem>;
+        return <NoteItem key={note._id} updateNote={updateNote} note={note} showAlert={props.showAlert}></NoteItem>;
       })
     }
   </div>

@@ -2,10 +2,10 @@ import { useState } from "react";
 import NoteContext from "./noteContext";
 
 const NoteState = (props) => {
+  
   const host = "http://localhost:5000";
   const noteIntial = []
   const [notes, setNotes] = useState(noteIntial);
-  
   // get all a Note
   const getNote = async () => {
     // TODO :API call
@@ -53,6 +53,7 @@ const NoteState = (props) => {
 
   // Edit a Note
   const editNote =async (id, title, description, tag) => {
+    
       const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
         method: "PUT", // *GET, POST, PUT, DELETE, etc.
         headers: {
@@ -78,6 +79,7 @@ const NoteState = (props) => {
     setNotes(newNotes)
   };
   return (
+    // 'use strict';
     <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote,getNote }}>
       {props.children}
     </NoteContext.Provider>

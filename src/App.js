@@ -2,7 +2,7 @@
 import './App.css';
 // import ReactDOM from "react-dom/client";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";
@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <NoteState>
-      <Router>
+      <BrowserRouter>
         <Navbar/>
         <Alert alert={alert}></Alert>
         <div className="container">
@@ -42,7 +42,7 @@ function App() {
           {/* <Home/> */}
         </Routes>
         </div>
-      </Router>
+      </BrowserRouter>
     </NoteState> 
   </>
   );
