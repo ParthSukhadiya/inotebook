@@ -13,7 +13,7 @@ function Notes(props) {
   // eslint-disable-next-line
    useEffect(() => {
      if(localStorage.getItem('token')){
-      getNote()
+       getNote()
     }
     else { 
       history('/login')

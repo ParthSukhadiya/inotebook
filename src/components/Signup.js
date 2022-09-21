@@ -32,7 +32,8 @@ function Signup(props) {
       setCredential({...credential,[e.target.name]:e.target.value})
     }
   return (
-    <div className="container">
+    <div className="container mt-5">
+      <h2>SignUp with iNotebook</h2>
       <form onSubmit={handleSubmit}>
       <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
